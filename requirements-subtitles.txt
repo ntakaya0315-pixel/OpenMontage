@@ -1,0 +1,3 @@
+# Local-only subtitle workflow dependencies for Codespaces.
+# Install with: python -m pip install -r requirements-subtitles.txt
+faster-whisper>=1.0,<2

@@ -158,6 +158,22 @@ cd OpenMontage
 make setup
 ```
 
+### Codespaces: Japanese Real-Estate Subtitle Workflow
+
+For 5-15 minute Japanese real-estate narration videos, use the reusable local-only workflow saved in this repository. It reads `source_media/input.mp4` or `source_media/input.mov`, generates Japanese subtitles with `faster-whisper`, uses `glossary/real_estate_terms.txt` to improve real-estate terminology, normalizes voice volume with FFmpeg, and writes `output/subtitled_final.mp4`. It does not use paid APIs, paid cloud transcription, or external generative AI; keep an eye on GitHub Codespaces free-tier usage and stop the Codespace when finished.
+
+```bash
+python -m venv .venv
+source .venv/bin/activate
+python -m pip install -r requirements-subtitles.txt
+sudo apt-get update
+sudo apt-get install -y ffmpeg fonts-noto-cjk
+python scripts/subtitle_real_estate_video.py source_media/input.mp4
+```
+
+Do not commit source videos or generated outputs. `source_media/*` and `output/*` are ignored except for `.gitkeep` placeholders. See [`docs/CODESPACES_JA_REAL_ESTATE_SUBTITLES.md`](docs/CODESPACES_JA_REAL_ESTATE_SUBTITLES.md) for beginner-friendly steps.
+
+
 Open the project in your AI coding assistant and tell it what you want:
 
 ```

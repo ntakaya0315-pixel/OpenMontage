@@ -20,8 +20,14 @@ htmlcov/
 .idea/
 .vscode/
 
+# Local source media and rendered outputs (large/local-only — never commit)
+source_media/*
+output/*
+
+!source_media/.gitkeep
+!output/.gitkeep
+
 # Pipeline outputs (regenerable — never commit large media)
-output/
 pipeline/
 tests/qa/output/
 
